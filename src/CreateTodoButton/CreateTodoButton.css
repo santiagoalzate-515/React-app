@@ -1,0 +1,23 @@
+.boton{
+    border: none;
+    position: relative;
+    top: -36px;
+    left: 304px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: cornflowerblue;
+    font-size: 40px;
+    color: white;
+    
+}
+
+.boton-input{
+    top: -54px;
+    left: 258px;
+}
+
+.boton:hover{
+    
+    transform: rotate(224deg);
+}

@@ -1,0 +1,32 @@
+.Icon-delate{
+    position: relative;
+    top: -50px;
+    left: -15px;
+    display: flex;
+}
+.Icon-delate-tamaño{
+    width: 15px;
+}
+
+.Icon-delate:hover  {
+    fill: red;
+}
+
+.Icon-checked{
+    
+    margin-left: 18px;
+    display: flex;
+    align-items: center;
+}
+.Icon-checked:hover  {
+    fill: green;
+}
+
+.Icon-checked-true {
+    color: green;
+    
+}
+
+.Icon-checked-tamaño{
+    width: 30px;
+}
