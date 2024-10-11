@@ -1,6 +1,9 @@
+
+import "./TodosError.css"
+
 function TodosError() {
     return(
-        <p>Tenemos Un Error...</p>
+        <p className="TodosError">Tenemos Un Error...</p>
     )
 }
 

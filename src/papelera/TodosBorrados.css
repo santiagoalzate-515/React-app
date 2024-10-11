@@ -1,0 +1,136 @@
+.container-tarea-checked-main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.container-container-trash{
+    height: 80%;
+    width: 55%;
+}
+
+.container-papelera{
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100%;
+}
+.main-container-delate-text{
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.container-delate-text{
+    width: 100%;
+    display: grid;
+}
+
+.boton-delate-container{
+    
+    background-color: #e86726;
+    
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    height: 30px;
+    display: flex;
+    fill: "gray";
+    
+    
+}
+
+.container-button-papelere{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.titulo-papelera{
+    font-size: 45px;
+    color: #00454d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.null-papelera{
+    padding: 20px;
+    background-color: #ffd25a;
+    color: #001610;
+    border: 2px solid #001610;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 500;
+    height: 120px;
+    display: flex;
+    align-items: center;
+}
+
+/* -------------------------------------------papelera-null-------------------------------------- */
+.container-container-trash-null{
+    height: 45%;
+    width: 35%;
+    margin-top: 50px;
+}
+
+.container-button-papelere-null {
+    margin-bottom: 40px;
+
+    
+}
+
+.main-container-delate-text .titulo-papelera-null{
+    font-size: 45px;
+    margin-bottom: 40px;
+}
+
+/* ---------------------------- */
+
+@media (max-width: 425px) and (min-width: 320px) {
+    .container-container-trash {
+        height: 80%;
+        width: 90%;
+    }
+
+    .titulo-papelera{
+        font-size: 35px;
+        
+    }
+}
+/* --------------------------------------------------------------- */
+@media (max-width: 768px) and (min-width:425px) {
+    .container-container-trash {
+        height: 80%;
+        width: 90%;
+    }
+
+    .titulo-papelera{
+        font-size: 35px;
+        
+    }
+}

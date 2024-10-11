@@ -1,41 +1,50 @@
 import React from "react";
 import { TodoContext } from "../TodoContext";
+import "./TodoForm.css"
 
 function TodoForm() {
-    const {addTodo,openModal,setopenModal}=React.useContext(TodoContext);
-    const [newTodoValue,setNewTodoValue]=React.useState("");
+
+    const {addTodo,setOpenModal}=React.useContext(TodoContext)
+    let [newText,setNewText]=React.useState("")
+
 
     const onsubmit=()=>{
-        setopenModal(false)
-        addTodo(newTodoValue)
+        setOpenModal(false)
+    }
+    const send=()=>{
+        setOpenModal(false)
+        
+        {!newText ? newText=null :addTodo(newText)}
     }
 
-    const oncancel=()=>{
-        setopenModal(false)
+    const onchange=(text)=>{
+        setNewText(text.target.value)
     }
-
-    const onchange=(event)=>{
-        setNewTodoValue(event.target.value)
-    }
-    
 
     return(
-        <form onSubmit={onsubmit}>
-            <label>Escribe tu nuevo TODO</label>
-
-            <textarea
-            value={newTodoValue}
+        <div className="form-container">
+            <div>
+            <form className="form" onSubmit={onsubmit}>
+            <h2 className="titulo">ESCRIBE TU NOTA</h2>
+            
+            <textarea className="create-newText"
+            
+            value={newText}
             onChange={onchange}
             ></textarea>
-
-            <button
-            onClick={()=>oncancel}
-            >CANCELAR</button>
-
-            <button>AÑADIR</button>
-
-        </form>
+            
+           
+            <div className="container-button">
+                <button className="boton-container-button" onClick={send}>ENVIAR</button>
+                <button className="boton-container-button" >CANCELAR</button>
+            </div>
+            
+            </form>
+            </div>
+            </div>
     )
+     
+        
 }
 
-export{TodoForm};
+export{TodoForm}

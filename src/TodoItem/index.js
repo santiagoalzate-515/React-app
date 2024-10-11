@@ -3,30 +3,31 @@ import {CompleteIcon} from "./CompleteIcon";
 import { DelateIcon } from "./DelateIcon";
 
 
+
 function TodoItem({text,completed,checked,delate}) {
     return(
-        <div className="container-tarea-checked">
+        <div className="container-tarea-checked-initial">
+            <div className="container-tarea-checked">
            
-            
-            {/* <span className={`Icon-checked ${completed && `Icon-checked-true`}`} 
-            onClick={checked}
-            >V</span>        */}
 
            <CompleteIcon
-           Completed={completed}
-           Checked={checked}
+           completed={completed}
+           checked={checked}
+           />
+           
+          
+           <div className="container-text">
+           <p className={`tarea ${completed && `tarea-through`}`} >{text}</p>
+
+           </div>
+
+           <DelateIcon
+           delate={delate}
            />
 
-            <p className={`tarea ${completed && `tarea-through`}`}>{text}</p>
-
-            <DelateIcon
-            Delate={delate}
-            />
-            {/* <span className="Icon-delate"
-            onClick={delate}
-            >X</span> */}
-
+       </div>
         </div>
+    
     )
 }
 

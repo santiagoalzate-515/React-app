@@ -1,13 +1,13 @@
 import { TodoList } from "./TodoList";
 
-function DelateIcon({Delate}) {
+function DelateIcon({delate}) {
     return(
         <TodoList
-            type="delate"
-            color="gray"
-            onclick={Delate}
+        type="delate"
+        color="gray"
+        onclick={delate}
         />
-    )
+       )
 }
 
 export{DelateIcon};

@@ -1,68 +1,120 @@
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
+import { LocalStoragePapelera } from "../papelera/LocalstoragePapelera";
 
-const TodoContext=React.createContext();
+const TodoContext=React.createContext()
 
 function TodoProvider({children}) {
+    const[searchValue,setSearchValue]=React.useState("")
+    const{Item:Todos,saveItem:saveTodo,error,loading}=useLocalStorage([],'TODOS_V1')
+    const[openModal,setOpenModal]=React.useState(false)
+    const[todopapelera,settodopapelera]=React.useState(false)
 
-    const [searchValue,setSearchValue]=React.useState("");
-    const {Item:Todos,saveItem:saveTodos,error,loading}=useLocalStorage(`TODOS_V1`,[]);
-    const [openModal,setopenModal]=React.useState(false);
 
-    const todoChecked=(text)=>{
-    const newTodos=[...Todos]
-    const todoIndex=newTodos.findIndex(
-      (todo)=>todo.Text==text
-    )
-    newTodos[todoIndex].Commpleted=true;
-    saveTodos(newTodos);
+    const{setItemBorrado:setTodoBorrado,itemBorrado:todoBorrado,
+      saveItemPapelera:saveTodoPapelera,stringyItemPapelera}=LocalStoragePapelera('TODOS_V2',[])
+
+
+
+
+  
+    const todoChecked=(newText)=>{
+      const newTodo=[...Todos]
+      const todoIndex=newTodo.findIndex(
+        (todo)=>todo.Text==newText
+      )
+      newTodo[todoIndex].Commpleted=true
+      saveTodo(newTodo)
+    }
+  
+    const todoDelate=(newText)=>{
+      const newTodo=[...Todos]
+      const todoIndex=newTodo.findIndex(
+        (todo)=>todo.Text==newText
+      )
+      const [delatedTodo]=newTodo.splice(todoIndex,1)
+      saveTodo(newTodo)
+
+      todoSendPapelera(delatedTodo)
     }
 
-    const todoDelate=(text)=>{
-    const newTodos=[...Todos]
-    const todoIndex=newTodos.findIndex(
-      (todo)=>todo.Text==text
-    )
-    newTodos.splice(todoIndex,1)
-    saveTodos(newTodos);
+    const todoDelatePapelera=(newText)=>{
+
+      const newTodo=[...todoBorrado]
+      const todoIndex=newTodo.findIndex(
+        (todo)=>todo.Text==newText
+      )
+      newTodo.splice(todoIndex,1)
+      saveTodoPapelera(newTodo)
+
+      
     }
 
+    const todoSendPapelera=(newText)=>{
+      const todoPapelera=[...todoBorrado]
+      todoPapelera.unshift(newText)
+      
+      saveTodoPapelera(todoPapelera)
+    }
+
+
+    const todoAgainPapelera=(newText)=>{
+      addTodo(newText)
+      todoDelatePapelera(newText)
+    
+    }
+   
+    
     const addTodo=(Text)=>{
-        const newTodos=[...Todos];
-        newTodos.push({
-            Text,
-            Commpleted:false
-        })
-        saveTodos(newTodos)
+      const id=Date.now()
+      const newTodo=[...Todos]
+      newTodo.unshift({
+        Text,
+        Commpleted:false,
+        id:id
+        
+      })
+      saveTodo(newTodo)
     }
-
-    const searchTodos=Todos.filter(
-    (todo)=>todo.Text.toLowerCase().includes(searchValue.toLowerCase())
+  
+    const searchTodos = Todos.filter(
+      (todo)=>todo.Text.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
     )
 
+
+  
+    const todoTotal=Todos.length
+  
     const todoCompleted=Todos.filter(
-    (todo)=>todo.Commpleted
+      (Todos)=>Todos.Commpleted
     ).length
 
-    const todoTotal=Todos.length;
+
+  
     return(
         <TodoContext.Provider value={
-            {
-                searchValue,
+            {searchValue,
                 setSearchValue,
                 Todos,
-                saveTodos,
+                saveTodo,
                 error,
                 loading,
                 todoChecked,
                 todoDelate,
                 searchTodos,
-                todoCompleted,
                 todoTotal,
+                todoCompleted,
                 openModal,
-                setopenModal,
-                addTodo
-
+                setOpenModal,
+                addTodo,
+                todopapelera,
+                settodopapelera,
+                todoBorrado,
+                setTodoBorrado,
+                todoSendPapelera,
+                todoDelatePapelera,
+                todoAgainPapelera,stringyItemPapelera
+                
             }
         }>
             {children}
@@ -70,4 +122,4 @@ function TodoProvider({children}) {
     )
 }
 
-export{TodoContext,TodoProvider};
+export{TodoContext,TodoProvider}

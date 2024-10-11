@@ -1,6 +1,10 @@
+import react from "react"
+import "./TodosLoading.css"
+
+
 function TodosLoading() {
     return(
-        <p>Estamos Cargando...</p>
+        <p className="TodosLoading">Estamos Cargando...</p>
     )
 }
 

@@ -1,11 +1,10 @@
-.TodosLoading{
+.empty{
     padding: 20px;
-    background-color: #e86726;
-    color: #00454d;
-    border: 2px solid #00454d;
+    background-color: #ffd25a;
+    color: #001610;
+    border: 2px solid #001610;
     border-radius: 8px;
     margin-bottom: 20px;
     font-size: 18px;
     font-weight: 500;
-
 }

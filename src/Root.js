@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 
-
-function Modal({children}) {
+function Root({children}) {
     return ReactDOM.createPortal(
         <span>
             {children}
-        </span>,document.getElementById('Modal')
+        </span>,document.getElementById('root')
     )
 }
 
-export {Modal}
+export {Root}

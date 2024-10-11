@@ -1,0 +1,22 @@
+.boton-papelera{
+    background-color: #e86726; 
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.boton-papelera:hover {
+    background-color: #ffd25a; 
+    transform: scale(1.05);
+
+}
+
+.boton-papelera:active {
+    transform: scale(0.95);
+    background-color: #00454d;;
+}

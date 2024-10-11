@@ -1,0 +1,114 @@
+.confirmacion-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.container-modal{
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 400px;
+   
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+.text-modal{
+    font-size: 32px;
+    margin-top: 15px;
+    color: #00454d;
+}
+
+.container-buttoms-modal{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.negrilla-again{
+  font-weight: 700;
+  color: #e86726;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+    
+}
+
+.button-modal{
+    width: 90px;
+  background-color: #e86726;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.button-modal:first-child {
+    background-color: #ffd25a; 
+    color: #001610;
+  }
+  
+  .button-modal:first-child:hover {
+    background-color: #f7c56f;
+    transform: scale(1.1);
+  }
+  
+  .button-modal:last-child {
+    background-color: #ffd25a;
+    color: #001610;
+  }
+  
+  .button-modal:last-child:hover {
+    background-color: #f7c56f;
+    transform: scale(1.1);
+  }
+  
+  .button-modal:first-child:active {
+    background-color:#e86726 ;
+  }
+  
+  .button-modal:last-child:active {
+    background-color:#e86726 ; 
+    
+  }
+
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 425px) and (min-width: 320px) {
+  .text-modal {
+    font-size: 15px;
+    
+}
+
+.button-modal {
+  width: 55px;
+  font-size: 10px;
+ 
+}
+.container-buttoms-modal {
+  
+  margin-top: 30px;
+}
+
+.container-modal{
+  width: 250px;
+}
+}

@@ -1,12 +1,10 @@
-import logo from '../platzi.webp';
 import './App.css';
 import { TodoCounter } from '../TodoCounter'
 import { TodoSearch } from '../TodoSearch';
 import {TodoItem} from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import { Todocontainer } from '../TodoItem/Todocontainer';
-import { useLocalStorage } from '../TodoContext/useLocalStorage';
 import { TodosLoading } from '../TodosLoading';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodosError } from '../TodosError';
@@ -14,61 +12,47 @@ import { TodoProvider } from '../TodoContext';
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../Modal';
 import { TodoForm } from '../TodoForm';
+import { TodoButtonPapelera } from '../papelera/TodoButtonPapelera';
+import { Modal2 } from '../papelera/Modal2';
+import { TodosBorrados } from '../papelera/TodosBorrados';
+import { Todocontainer1 } from '../container/TodoContainer1';
+import { ContainerInitial } from '../ContainerInitial/ContainerInitial';
 
-// const listTodos = [ 
-//   {Text:"cortar TOMATE",Commpleted:true},
-//   {Text:"tomar el curso de React",Commpleted:false},
-//   {Text:"llorar con la llorona",Commpleted:true},
-//   {Text:"lalalalala",Commpleted:false},
-//   {Text:"cortar TOMATE ",Commpleted:true},
-//   {Text:"tomar el curso de React ",Commpleted:false},
-//   {Text:"llorar con la llorona ",Commpleted:true},
-//   {Text:"lalalalala ",Commpleted:false},
-//   {Text:"cortar TOMATE  ",Commpleted:true},
-//   {Text:"tomar el curso de React  ",Commpleted:false},
-//   {Text:"llorar con la llorona  ",Commpleted:true},
-//   {Text:"lalalalala  ",Commpleted:false},
-//   {Text:"cortar TOMATE   ",Commpleted:true},
-//   {Text:"tomar el curso de React   ",Commpleted:false},
-//   {Text:"llorar con la llorona   ",Commpleted:true},
-//   {Text:"lalalalala   ",Commpleted:false},
-// ]
 
 
 function App() {
   
-
   return (
     <TodoProvider>
       <TodoContext.Consumer>
-        {(
-          {
-            searchValue,
+        {({searchValue,
             setSearchValue,
-            Todos,
-            saveTodos,
             error,
             loading,
             todoChecked,
             todoDelate,
             searchTodos,
-            todoCompleted,
             todoTotal,
+            todoCompleted,
             openModal,
-            setopenModal,
+            setOpenModal,
+            todopapelera
+           
+            
+        })=>(<React.Fragment>
 
-        }
-        )=>(
-          <React.Fragment>
-
+          <ContainerInitial>
           <TodoCounter
-          todocompleted={todoCompleted}
-          todototal={todoTotal}
-          />
-    
+                                todoCompleted={todoCompleted}
+                                todoTotal={todoTotal}
+                            />
+
+
+
+          <Todocontainer1>
           <TodoSearch
-          searchvalue={searchValue}
-          setsearchvalue={setSearchValue}
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
           />
     
     
@@ -79,7 +63,8 @@ function App() {
     
             {searchTodos.map(
               (todo)=><TodoItem
-                key={todo.Text}
+              
+                key={todo.id}
                 text={todo.Text}
                 completed={todo.Commpleted}
                 checked={()=>todoChecked(todo.Text)}
@@ -87,18 +72,31 @@ function App() {
     
               />
             )}
+
+
           </Todocontainer>
-           
+
           <CreateTodoButton/>
+
+          <TodoButtonPapelera/>
+           
+         
+          </Todocontainer1>
     
+         
+
           {openModal && <Modal><TodoForm/></Modal>}
-            
-    
-        </React.Fragment>
-        )}
+          {todopapelera && <Modal2><TodosBorrados/></Modal2>}
+          
+          
+          </ContainerInitial>
+        </React.Fragment>)}
+          
       </TodoContext.Consumer>
     </TodoProvider>
-);
+  )
 }
+  
 
+        
 export default App;

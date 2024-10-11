@@ -1,8 +1,10 @@
-.TodosLoading{
+.TodosError{
     padding: 20px;
-    background-color: #e86726;
-    color: #00454d;
-    border: 2px solid #00454d;
+   
+    background-color: #00454d;
+
+    color: #e86726;
+    border: 2px solid #e86726;
     border-radius: 8px;
     margin-bottom: 20px;
     font-size: 18px;

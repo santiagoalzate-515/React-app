@@ -1,24 +1,39 @@
 .titulo {
     font-weight: 400;
-    font-Size: 24px;
+    font-size: 3rem;
     text-align: center;
     margin: 0;
-    padding: 70px;
-    padding-top: 0px;
+    padding: 2rem;
+    color: #00454d;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     
 }
 .container-titulo {
-    width: 327px;
-    height: 58px;
     display: flex;
-    align-items: center;
-    margin-top: 120px;
+    justify-content: center;
+    color: #e86726;
 }
 
 .numeronegrilla{
-    font-weight: 700px;
-    font-Size: 24px;
-    text-align:center;
+    font-weight: 700; 
+    font-size: 3rem; 
+    text-align: center;
     margin: 0;
+    color: #ffffbb;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
    
+   
+}
+/* -------- */
+
+@media (max-width: 425px) and (min-width: 320px) {
+    .container-titulo .titulo {
+        font-size: 30px;
+        
+    }
+
+    .container-titulo .numeronegrilla {
+        font-size: 30px;
+        
+    }
 }

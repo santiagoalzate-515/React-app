@@ -4,15 +4,10 @@ li{
 }
 
 .tarea{
-    font-family: Montserrat;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: 0em;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    padding-left: 70px;
+    font-size: 26px;
+    color: #001610;
+    line-height: 1.5;
+    margin: 15px;
 
 }
 
@@ -21,45 +16,51 @@ li{
 }
 
 .container-tarea-checked{
-    width: 330px;
-    height: 100px; 
-    border-radius: 2px;
-    background: rgba(250, 250, 250, 1);
-    box-shadow: 0px 5px 50px 0px rgba(32, 35, 41, 0.15);
-    margin-bottom: 25px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    width: 100%; 
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
 }
 
-.Icon-delate{
-    position: relative;
-    top: -50px;
-    left: -15px;
-    display: flex;
-}
-.Icon-delate-tamaño{
-    width: 15px;
-}
-
-.Icon-delate:hover  {
-    color: red;
-}
-
-
-.Icon-checked{
-    
-    margin-left: 18px;
+.container-tarea-checked-initial{
     display: flex;
     align-items: center;
-}
-.Icon-checked-true {
-    color: green;
+    width: 360px;
 }
 
-.Icon-checked-tamaño{
-    width: 30px;
+.container-text{
+    
+    word-break: break-all; 
 }
 
+/* ------------------------------------- */
 
 
+@media (max-width: 425px) and (min-width: 320px) {
+    .container-tarea-checked-initial{
+        display: flex;
+        align-items: center;
+        width: 339px;
+        justify-content: center;
+    }
 
+    .container-tarea-checked {
+        width: 70%;
+        
+    }
+
+    .tarea{
+        font-size: 15px;
+        color: #001610;
+        line-height: 1.5;
+        margin: 0;
+    
+    }
+}
