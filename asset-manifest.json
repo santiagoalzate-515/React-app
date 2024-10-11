@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/React-app/static/css/main.f2e0ca73.css",
-    "main.js": "/React-app/static/js/main.2d3b1c7a.js",
-    "static/media/platzi.webp": "/React-app/static/media/platzi.5b31ce99c22184cfdc82.webp",
+    "main.css": "/React-app/static/css/main.4ea5052f.css",
+    "main.js": "/React-app/static/js/main.4bd323c5.js",
     "index.html": "/React-app/index.html",
-    "static/media/delate.svg": "/React-app/static/media/delate.67697f56fd2f149bc9515a879062ad5c.svg",
-    "static/media/check.svg": "/React-app/static/media/check.23109d14544b9bb9b3d5d4e65ea13701.svg",
-    "main.f2e0ca73.css.map": "/React-app/static/css/main.f2e0ca73.css.map",
-    "main.2d3b1c7a.js.map": "/React-app/static/js/main.2d3b1c7a.js.map"
+    "static/media/delate.svg": "/React-app/static/media/delate.c8395d22c8bd7b04700b5fed4166233b.svg",
+    "static/media/check.svg": "/React-app/static/media/check.fc9c3e58727ab3e74c62c2b6cd27baae.svg",
+    "main.4ea5052f.css.map": "/React-app/static/css/main.4ea5052f.css.map",
+    "main.4bd323c5.js.map": "/React-app/static/js/main.4bd323c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.f2e0ca73.css",
-    "static/js/main.2d3b1c7a.js"
+    "static/css/main.4ea5052f.css",
+    "static/js/main.4bd323c5.js"
   ]
 }
