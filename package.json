@@ -1,4 +1,4 @@
- {
+{
   "name": "platzi-intro-react-base",
   "version": "0.1.0",
   "homepage": "https://santiagoalzate-515.github.io/React-app",
@@ -35,4 +35,4 @@
   "devDependencies": {
     "gh-pages": "^6.2.0"
   }
-} }
+}
