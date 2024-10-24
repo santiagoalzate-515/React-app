@@ -15,12 +15,12 @@
 }
 
 body {
-   /* Centra el contenido verticalmente */
+   
   height: 100vh;
   margin: 0;
-  background: linear-gradient(45deg, #00454d, #ffd25a); /* Colores específicos */
-  background-size: 200% 1%; /* Tamaño del fondo para un efecto amplio */
-  animation: waveAnimation 4s linear infinite; /* Animación menos rápida */
+  background: linear-gradient(45deg, #00454d, #ffd25a); 
+  background-size: 200% 1%; 
+  animation: waveAnimation 4s linear infinite; 
 }
 
 @keyframes waveAnimation {
